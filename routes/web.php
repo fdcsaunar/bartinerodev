@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Post;
 use App\Http\Controllers\PostsController;
 
 /*
@@ -15,8 +16,15 @@ use App\Http\Controllers\PostsController;
 */
 
 Route::get('/', function () {
-    return view('home');
-});
+    
+    $posts = Post::take(8)->get();
+
+    $posts = Post::orderBy('created_at', 'desc')->get();
+
+        return view('home', [
+            'posts' => $posts
+        ]);
+})->name('home');
 
 Route::get('/categories', function () {
     return view('categories');
@@ -26,9 +34,9 @@ Route::get('/deals', function () {
     return view('deals');
 });
 
-Route::get('/trade', function () {
-    return view('items.create');
-});
+//Route::get('/trade', function () {
+//   return view('items.create');
+//});
 
 Route::get('/about', function () {
     return view('about');
@@ -51,3 +59,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::resource('items', PostsController::class);
+// Route::get('/items', [PostsController::class, 'index']);
+// Route::get('/items/{id}', [PostsController::class, 'show']);
+// Route::post('/items/create', [PostsController::class, 'store']);
+// Route::post('/items/edit', [PostsController::class, 'edit']);
+// Route::post('/items/{id}', [PostsController::class, 'update']);

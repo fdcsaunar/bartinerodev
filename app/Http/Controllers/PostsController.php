@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User; 
 use App\Models\Post; 
 
 class PostsController extends Controller
@@ -15,7 +14,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::get();
+        //$posts = Post::get();
+
+        $posts = Post::orderBy('created_at', 'desc')->get();
 
         return view('items.index', [
             'posts' => $posts
@@ -29,7 +30,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('items.create');
     }
 
     /**
@@ -40,7 +41,17 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+            'images' => 'required',
+            'lookingfor' => 'required',
+        ]);
+
+        $request->user()->posts()->create($request->only('title','category','description', 'images','lookingfor'));
+
+        return redirect('/items')->with('success', 'Post created.');
     }
 
     /**
@@ -64,7 +75,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $posts = Post::find($id);
+        return view('items.edit')->with('post', $posts);
     }
 
     /**
@@ -76,7 +88,23 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required',
+            'category' => 'required',
+            'description' => 'required',
+            'images' => 'required',
+            'lookingfor' => 'required',
+        ]);
+        $posts = Post::find($id);
+        $posts->title = $request->input('title');
+        $posts->category = $request->input('category');
+        $posts->description = $request->input('description');
+        $posts->images = $request->input('images');
+        $posts->lookingfor = $request->input('lookingfor');
+        $posts->save();
+
+        return redirect()->route('items.index')
+            ->with('success', 'Post updated.');
     }
 
     /**
@@ -87,6 +115,9 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $posts = Post::find($id);
+        $posts->delete();
+        return redirect()->route('items.index')
+            ->with('success', 'Post deleted.');
     }
 }

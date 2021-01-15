@@ -16,7 +16,7 @@
                     <p><i class="fas fa-location-arrow"></i>You are posting from barangay.</p>
                 </div>
 
-                <form action="/" method="post" enctype="multipart/form-data">
+                <form action="{{ route('items.store') }}" method="post" enctype="multipart/form-data">
 
                     @csrf
 

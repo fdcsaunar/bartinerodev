@@ -16,9 +16,14 @@
                 </div>
             </div>
 
+            <div class="messages">
+                @include('inc.messages')
+                @yield('content')
+            </div>
+
             <div class="wrapper">
 
-                        @if ($posts->count())
+                    @if ($posts->count())
                     
                     @foreach ($posts as $post)
 
@@ -29,15 +34,13 @@
                         </div>
                         
                         <div class="card-body">
-                            {{-- <a href="" class="user-link">{{ $post->user->name }}</a> --}}
+                            <a href="" class="user-link">{{ $post->user->name }}</a>
                             <span>• {{ $post->created_at->diffForHumans() }}</span>
                             <h5 class="card-title">
                                 <a href="/items/{{$post->id}}">{{ $post->title }}</a>
                             </h5>
                         </div>
                     </div>
-
-            
 
                     @endforeach
 

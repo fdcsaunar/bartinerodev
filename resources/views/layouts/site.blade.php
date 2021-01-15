@@ -60,7 +60,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a href="/trade" class="nav-link altrade">Trade</a>
+                                <a href="{{ route('items.create') }}" class="nav-link altrade">Trade</a>
                             </li>
 
                         @else

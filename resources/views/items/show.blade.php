@@ -8,6 +8,13 @@
 
             <div class="header-navs">
                 <a href="/items">Return to latest items</a>
+                <a href="/items/{{$post->id}}/edit" class="btn btn-default">Edit</a>
+
+                <form action="{{ route('items.destroy', $post->id) }}" method="post" class="float-right">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-success">DELETE</button>
+                </form>
             </div>
 
             <div class="row justify-content-center">
@@ -28,7 +35,7 @@
 
                     <div class="item-header">
 
-                        <p>{{-- get user id here --}} • {{ $post->created_at->diffForHumans() }}</p>
+                        <p>{{ $post->user->name }} • {{ $post->created_at->diffForHumans() }}</p>
                         <h1>{{ $post->title }}</h1>
 
                     </div>
@@ -36,8 +43,6 @@
                     <div class="item-body">
 
                         <p>{{ $post->description }}</p>
-
-                        
 
                         <div class="item-looking">
 

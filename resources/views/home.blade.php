@@ -160,11 +160,8 @@
         <h1>Check out these latest deals</h1>
         <p>Start trading with a Las Piñero</p>
 
-        <div class="repeater">
-            12
-        </div>
-
-        {{-- 
+        <div class="wrapper">
+            
             @if ($posts->count())
             
             @foreach ($posts as $post)
@@ -177,7 +174,7 @@
                 </div>
                 
                 <div class="card-body">
-                    <a href="" class="user-link">{{ $post->user->username }}</a>
+                    <a href="" class="user-link">{{ $post->user->name }}</a>
                     <span>• {{ $post->created_at->diffForHumans() }}</span>
                     <h5 class="card-title">
                         <a href="">{{ $post->title }}</a>
@@ -194,7 +191,8 @@
             <p>There are currently no active listings.</p>
 
             @endif 
-        --}}
+       
+        </div>
 
     </div>
 
