@@ -1,4 +1,4 @@
-@extends('layouts.site')
+@extends('layouts.app')
 
 @section('content')
 
@@ -8,6 +8,7 @@
 
             <div class="header-navs">
                 <a href="/items">Return to latest items</a>
+                @auth
                 <a href="/items/{{$post->id}}/edit" class="btn btn-default">Edit</a>
 
                 <form action="{{ route('items.destroy', $post->id) }}" method="post" class="float-right">
@@ -15,6 +16,7 @@
                     @method('DELETE')
                     <button type="submit" class="btn btn-success">DELETE</button>
                 </form>
+                @endauth
             </div>
 
             <div class="row justify-content-center">

@@ -1,4 +1,4 @@
-@extends('layouts.site')
+@extends('layouts.app')
 
 @section('content')
 
@@ -177,7 +177,7 @@
                     <a href="" class="user-link">{{ $post->user->name }}</a>
                     <span>• {{ $post->created_at->diffForHumans() }}</span>
                     <h5 class="card-title">
-                        <a href="">{{ $post->title }}</a>
+                        <a href="/items/{{$post->id}}">{{ $post->title }}</a>
                     </h5>
                 </div>
             </div>

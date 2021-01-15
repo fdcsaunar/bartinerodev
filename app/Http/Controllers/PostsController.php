@@ -49,9 +49,18 @@ class PostsController extends Controller
             'lookingfor' => 'required',
         ]);
 
-        $request->user()->posts()->create($request->only('title','category','description', 'images','lookingfor'));
+        $posts = new Post;
+        $posts->title = $request->input('title');
+        $posts->category = $request->input('category');
+        $posts->description = $request->input('description');
+        $posts->images = $request->input('images');
+        $posts->lookingfor = $request->input('lookingfor');
+        $posts->user_id = auth()->user()->id;
+        $posts->save();
 
-        return redirect('/items')->with('success', 'Post created.');
+        //$request->user()->posts()->create($request->only('title','category','description', 'images','lookingfor'));
+
+        return redirect('/dashboard')->with('success', 'Post created.');
     }
 
     /**

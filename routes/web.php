@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Http\Controllers\PostsController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,17 +51,13 @@ Route::get('/terms-and-conditions', function () {
     return view('terms');
 });
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
 Route::resource('items', PostsController::class);
-// Route::get('/items', [PostsController::class, 'index']);
-// Route::get('/items/{id}', [PostsController::class, 'show']);
-// Route::post('/items/create', [PostsController::class, 'store']);
-// Route::post('/items/edit', [PostsController::class, 'edit']);
-// Route::post('/items/{id}', [PostsController::class, 'update']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Auth::routes();
