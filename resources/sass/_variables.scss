@@ -1,0 +1,48 @@
+// Body
+$body-bg: #ffffff;
+
+// Typography
+$font-family-sans-serif: 'DM Sans', sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66d9b;
+$red: #e3342f;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+// Buttons
+.cta-regular {
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    padding: 0.75rem;
+}
+
+.cta-regular:hover {
+    color: white;
+    background: black;
+    transition: 0.25s;
+}
+
+.cta-filled {
+    border: 1px solid black;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    padding: 0.75rem;
+    color: white;
+    background: black;
+}
+
+.cta-filled:hover {
+    color: white;
+    background: black;
+    transition: 0.25s;
+}

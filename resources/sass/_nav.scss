@@ -1,0 +1,114 @@
+.navbar {
+
+    background: white;
+    padding: 0.5rem;
+    border-bottom: #919191;
+    transition: all 0.5s;
+
+    img {
+        height: 2.5rem;
+    }
+
+    .form-inline {
+
+        input[type=search] {
+            width: 35rem;
+            border-radius: 4rem;
+            background: #eaeaea;
+            border: none;
+        }
+
+        input[type=search]:focus {
+            border: 1px solid black;
+        }
+
+        input[type=search]::placeholder {
+            font-family: 'DM Sans', sans-serif;
+            padding: 0 0.5rem;
+            color: #b8b8b8;
+        }
+    }
+
+    .navbar-nav {
+        .nav-item {
+
+            a {
+                font-family: 'DM Sans', sans-serif;
+                color: rgb(184, 184, 184);
+                font-weight: 500;
+                padding: 0 1rem;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+            }
+    
+            a:hover {
+                color: black;
+                transition: all 0.3s;
+            }
+            .altrade {
+  
+                padding: 0.5rem 1rem;
+                border: 1px solid black;
+                border-radius: 4px;
+                color: white;
+                background-color: black;
+                font-weight: 500;
+                margin-left: 0.5rem;
+
+        }
+    
+        }
+        
+        .nav-item:nth-child(4) {
+            a {
+                padding: 0.5rem 1rem;
+                border: 1px solid black;
+                border-radius: 4px;
+                color: white;
+                background-color: black;
+                font-weight: 500;
+                margin-left: 0.5rem;
+            }
+        }
+
+        .altnav {
+
+            font-family: 'DM Sans', sans-serif;
+
+            button {
+                padding: 0.5rem 1rem;
+                border: 1px solid black;
+                border-radius: 4px;
+                color: black;
+                background-color: white;
+                font-weight: 500;
+                margin: 0 1rem;
+            }
+
+            button:nth-child(2) {
+                font-family: "DM Sans", sans-serif;
+                color: #b8b8b8;
+                font-weight: 500;
+                padding: 0 1rem;
+                text-decoration: none;
+                padding: 0.5rem 1rem;
+                margin: 0;
+                border: none;
+            }
+
+            button:nth-child(2):hover {
+                transition: all 0.3s;
+                color: black;
+            }
+
+            
+        }
+    }
+
+    .fa, .fas {
+        font-size: 1rem;
+        color: black;
+        padding-right: 0.5rem;
+    }
+    
+}

@@ -1,0 +1,35 @@
+footer {
+    
+    padding: 3rem 0;
+    border-top: 1px solid #f2f2f2;
+    font-family: 'DM Sans', sans-serif;
+
+    .row {
+        .col {
+            img {
+                height: 2.5rem;
+            }
+        }
+        .col-auto {
+            margin-left: 5rem;
+        }
+    }
+
+    h4 {
+        font-weight: bold;
+        letter-spacing: 0.10rem;
+        margin-bottom: 1rem;
+        color: black;
+        text-align: right;
+    }
+
+    ul {
+        li {
+           font-size: 0.75rem;
+           margin-bottom: 1rem;
+           color: black;
+           text-align: right;
+        }
+    }
+
+}

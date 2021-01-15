@@ -1,0 +1,202 @@
+#hero {
+    display: flex;
+    align-items: center;
+    min-height: 600px;
+    padding: 2rem;
+    font-family: 'DM Sans', sans-serif;
+
+    .col-lg-4 {
+
+        h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            letter-spacing: -0.09rem;
+            color: black;
+        }
+
+        .hero-cta {
+            margin: 2rem 0;
+
+            a {
+                text-decoration: none;
+                margin-right: 1.5rem;
+            }
+        }
+    }
+}
+
+#hero-byline {
+    
+    padding: 3rem 0;
+    background-color: black;
+
+    h1 {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0;
+        color: white;
+    }
+
+    p {
+        font-family: 'DM Sans', sans-serif;
+        color: white;
+        padding-top: 0.25rem;
+        margin-bottom: 0;
+    }
+
+    .fa, .fas {
+        font-weight: 900;
+        font-size: 1.5rem;
+        color: white;
+    }
+
+    .byline-icon {
+        margin-right: 1rem;
+    }
+
+    .byline-text {
+        margin-left: 0.8rem;
+    }
+    
+}
+
+#product-categories {
+
+    padding-top: 3rem;
+
+    h1 {
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: black;
+    }
+
+    p {
+        font-family: 'DM Sans', sans-serif;
+        color: #b8b8b8;
+        padding: 0.5rem 0;
+    }
+
+    .row {
+        display: flex;
+        padding: 2rem;
+
+        .col:nth-child(1) {
+            border-left: none;
+        }
+
+        .col {
+            padding: 1rem;
+            border-left: 1px solid #f2f2f2;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+
+            .fa, .fas {
+                font-weight: 900;
+                font-size: 1.5rem;
+                padding-bottom: 0.5rem;
+                text-align: center;
+            }
+
+            h3 {
+                font-family: 'DM Sans', sans-serif;
+                font-weight: 600;
+                font-size: 1rem;
+                color: black;
+            }
+
+            a {
+                text-align: center;
+            }
+
+            a:hover {
+                color: black;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+#latest-deals {
+
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+
+    h1 {
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: black;
+    }
+
+    p {
+        font-family: 'DM Sans', sans-serif;
+        color: #b8b8b8;
+        padding: 0.5rem 0;
+    }
+
+    .repeater {
+        min-height: 300px;
+        border: 1px solid black;
+        border-radius: 4px;
+        margin-top: 2rem;
+    }
+
+}
+
+#about {
+
+    padding: 4rem 0;
+    border-top: 1px solid #f2f2f2;
+
+    h1 {
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: black;
+    }
+
+    p {
+        font-family: 'DM Sans', sans-serif;
+        color: #b8b8b8;
+        margin-bottom: 0;
+    }
+
+    .row {
+        .card {
+            border: none;
+            background: transparent;
+
+            .card-body {
+                padding: 0;
+            }
+        }   
+    }
+
+    .about-cta {
+        padding-top: 3rem;
+
+        p {
+            font-family: 'DM Sans', sans-serif;
+            color: black;
+            margin-bottom: 0;
+        }
+
+        a {
+            font-family: "DM Sans", sans-serif;
+            color: white;
+            padding: 0 1rem;
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            background-color: black;
+            border: 1px solid black;
+            border-radius: 4px;
+            letter-spacing: 0.02rem;
+            margin: 0 1rem;
+        }
+    }
+
+}
+
