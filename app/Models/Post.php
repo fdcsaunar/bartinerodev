@@ -12,7 +12,7 @@ class Post extends Model
     protected $guarded = [];  
 
     protected $fillable = [
-        'title', 'category', 'images', 'description', 'lookingfor'
+        'title', 'category', 'images', 'description', 'images', 'lookingfor'
     ];
 
     public function user() {

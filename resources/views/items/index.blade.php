@@ -1,4 +1,4 @@
-@extends('layouts.site')
+@extends('layouts.app')
 
 @section('content')
 
@@ -16,11 +16,6 @@
                 </div>
             </div>
 
-            <div class="messages">
-                @include('inc.messages')
-                @yield('content')
-            </div>
-
             <div class="wrapper">
 
                     @if ($posts->count())
@@ -30,7 +25,7 @@
                     <div class="card">
                         
                         <div class="card-top">
-                            <img src="{{ asset('img/img-placeholder.png') }}" alt="" class="card-img-top">
+                            <img src="/storage/img/{{$post->images}}" alt="" class="card-img-top">
                         </div>
                         
                         <div class="card-body">

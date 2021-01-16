@@ -45,13 +45,33 @@ class PostsController extends Controller
             'title' => 'required',
             'category' => 'required',
             'description' => 'required',
-            'images' => 'required',
+            'images' => 'image|required|max:5999',
             'lookingfor' => 'required',
         ]);
 
-        $request->user()->posts()->create($request->only('title','category','description', 'images','lookingfor'));
+        if($request->hasFile('images')) {
+            global $path;
+            $filenameWithExt = $request->file('images')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $extension = $request->file('images')->getClientOriginalExtension();
+            $fileNameToStore = $filename .'_'.time().'.'.$extension;
+            $path = $request->file('images')->storeAs('public/img', $fileNameToStore);
+        } else {
+            $fileNameToStore = 'img-placeholder.png';
+        }
 
-        return redirect('/items')->with('success', 'Post created.');
+        $posts = new Post;
+        $posts->title = $request->input('title');
+        $posts->category = $request->input('category');
+        $posts->description = $request->input('description');
+        $posts->images = $fileNameToStore;
+        $posts->lookingfor = $request->input('lookingfor');
+        $posts->user_id = auth()->user()->id;
+        $posts->save();
+
+        //$request->user()->posts()->create($request->only('title','category','description', 'images','lookingfor'));
+
+        return redirect('/dashboard')->with('success', 'Post created.');
     }
 
     /**
@@ -74,8 +94,11 @@ class PostsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   
         $posts = Post::find($id);
+        if(auth()->user()->id !== $posts->user_id) {
+            return redirect('/dashboard')->with('error', 'Unauthorized page.');
+        }
         return view('items.edit')->with('post', $posts);
     }
 
@@ -103,7 +126,7 @@ class PostsController extends Controller
         $posts->lookingfor = $request->input('lookingfor');
         $posts->save();
 
-        return redirect()->route('items.index')
+        return redirect()->route('dashboard')
             ->with('success', 'Post updated.');
     }
 
@@ -116,8 +139,12 @@ class PostsController extends Controller
     public function destroy($id)
     {
         $posts = Post::find($id);
+        if(auth()->user()->id !== $posts->user_id) {
+            return redirect('/dashboard')->with('error', 'Unauthorized page.');
+        }
         $posts->delete();
-        return redirect()->route('items.index')
+        return redirect()->route('dashboard')
             ->with('success', 'Post deleted.');
     }
+
 }

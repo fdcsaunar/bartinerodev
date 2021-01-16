@@ -1,0 +1,109 @@
+#dashboard {
+
+    padding: 2rem 0;
+    font-family: 'DM Sans', sans-serif;
+
+    h1 {
+        font-weight: bold;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        color: #b8b8b8;
+    }
+
+    .fa, .fas {
+        padding-right: 0.5rem;
+    }
+
+    .nav {
+
+        padding-bottom: 2rem;
+
+
+        .tab {
+
+            .tablinks {
+                margin-left: 2rem;
+                border: none;
+                background: none;
+                //text-align: right;
+                font-weight: bold;
+                letter-spacing: 0.01rem;
+                padding: 0;
+                color: #b8b8b8;
+            }
+
+            .tablinks:hover {
+                color: black;
+                transition: 0.3s;
+            }
+        }
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2rem;
+    }
+
+    .dashboard-grid {
+        border: 1px solid black;
+        padding: 2rem;
+        border-radius: 4px;
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        h5 {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+
+        .listings {
+
+            border-bottom: 1px solid #b8b8b8;
+            padding: 0.6rem 0;
+
+            .listings-footer {
+                .btn {
+                    padding-top: 0.5rem;
+                    padding-left: 0;
+                }
+            }
+            
+        }
+    }
+
+    .archive-post {
+
+        border-radius: 4px;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        background: #eaeaea;
+
+        p {
+            color: black;
+            font-weight: 500;
+        }
+    }
+
+    .account-grid {
+        border: 1px solid black;
+        padding: 2rem;
+        border-radius: 4px;
+        min-height: 300px;
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+    }
+
+}

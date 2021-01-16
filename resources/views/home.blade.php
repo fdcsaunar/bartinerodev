@@ -1,4 +1,4 @@
-@extends('layouts.site')
+@extends('layouts.app')
 
 @section('content')
 
@@ -169,15 +169,13 @@
             <div class="card">
                 
                 <div class="card-top">
-                    <p>{{ $post->category }}</p>
-                    <img src="{{ asset('img/img-placeholder.png') }}" alt="" class="card-img-top">
+                    <img src="/storage/img/{{$post->images}}" alt="" class="card-img-top">
                 </div>
                 
                 <div class="card-body">
-                    <a href="" class="user-link">{{ $post->user->name }}</a>
-                    <span>• {{ $post->created_at->diffForHumans() }}</span>
+                    <p>{{ $post->user->name }} • {{ $post->category }} • {{ $post->created_at->diffForHumans() }}</p>
                     <h5 class="card-title">
-                        <a href="">{{ $post->title }}</a>
+                        <a href="/items/{{$post->id}}">{{ $post->title }}</a>
                     </h5>
                 </div>
             </div>
@@ -247,8 +245,8 @@
             </div>
         </div>
 
-        <div class="d-flex align-items-center justify-content-center">
-            <a href="/about" class="cta-regular">Read more about Bartinero</a>
+        <div class="d-flex align-items-center justify-content-center" style="margin-top: 2rem;">
+            <a href="/about" class="cta-regular" style="margin-right: 1.5rem;">Read more about Bartinero</a>
             <a href="/register" class="cta-filled">Join the Las Piñas barter community</a>
         </div>
 
