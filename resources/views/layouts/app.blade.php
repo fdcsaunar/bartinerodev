@@ -59,7 +59,7 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Trade') }}</a>
+                                    <a href="{{ route('items.create') }}" class="nav-link altrade">Trade</a>
                                 </li>
                             @endif
                         @else
@@ -112,9 +112,9 @@
                 <div class="col-auto">
                     <h4>BARTER</h4>
                     <ul>
-                        <li><a href="/">Categories</a></li>
-                        <li><a href="/">Deals</a></li>
-                        <li><a href="/">Trade</a></li>
+                        <li><a href="/categories">Categories</a></li>
+                        <li><a href="/items">Deals</a></li>
+                        <li><a href="/items/create">Trade</a></li>
                     </ul>
                 </div>
     
@@ -130,10 +130,10 @@
                 <div class="col-auto">
                     <h4>ACCOUNT</h4>
                     <ul>
-                        <li><a href="/">Sign Up</a></li>
-                        <li><a href="/">Log In</a></li>
-                        <li><a href="/">Profile</a></li>
-                        <li><a href="/">Messages</a></li>
+                        <li><a href="/register">Sign Up</a></li>
+                        <li><a href="/login">Log In</a></li>
+                        <li><a href="/dashboard">Profile</a></li>
+                        <li><a href="/dashboard">Messages</a></li>
                     </ul>
                 </div>
     
