@@ -51,8 +51,8 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/privacy-policy', function () {
-    return view('policy');
+Route::get('/terms-and-conditions#privacy-policy', function () {
+    return view('terms');
 });
 
 Route::get('/terms-and-conditions', function () {

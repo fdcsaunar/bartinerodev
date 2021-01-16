@@ -61,7 +61,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    {{ Auth::user()->firstname }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -103,7 +103,7 @@
                 <a href="/"><img src="{{ asset('img/bart_logo_solo.svg') }}" class="img-fluid" alt=""></a>
             </div>
 
-            <div class="links d-flex">
+            <div class="links">
 
                 <div class="col-auto">
                     <h4>BARTER</h4>
@@ -136,14 +136,12 @@
                 <div class="col-auto">
                     <h4>POLICY CENTER</h4>
                     <ul>
-                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/terms-and-conditions#privacy-policy">Privacy Policy</a></li>
                         <li><a href="/terms-and-conditions">Terms and Conditions</a></li>
                     </ul>
                 </div>
 
             </div>
-
-            
 
         </div>
 
