@@ -1,77 +1,209 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+<section id="register">
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+    <div class="container">
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+        <h2>Register</h2>
 
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+        <div class="row justify-content-center">
+
+            <div class="col-auto">
+
+                <form action="{{ route('register') }}" method="post" id="register-form">
+
+                    @csrf
+
+                    {{-- First and Last Name --}}
+                    <div class="form-row">
+                        <div class="form-group col-6">
+
+                            <input type="text" class="form-control @error('firstname') form-error-inline @enderror" name="firstname" id="firstname" value="{{ old('firstname') }}" placeholder="First Name">
+
+                            @error('firstname')
+                                <div class="form-error">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
                         </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                        <div class="form-group col-6">
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                            <input type="text" class="form-control @error('lastname') form-error-inline @enderror" name="lastname" id="lastname" value="{{ old('lastname') }}" placeholder="Last Name">
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                            @error('lastname')
+                                <div class="form-error">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
                         </div>
+                    </div>
+                    
+                    {{-- Gender --}}
+                    <div class="form-group">
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                        <select name="gender" id="gender" class="form-control @error('gender') form-error-inline @enderror" value="{{ old('gender') }}">
+                            <option value="" selected disabled>Gender</option>
+                            <option value="Male" id="male">Male</option>
+                            <option value="Female" id="female">Female</option>
+                        </select>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                        @error('gender')
+                            <div class="form-error">
+                                {{ $message }}
                             </div>
-                        </div>
+                        @enderror
+                        
+                    </div>
+                    
+                    {{-- Address --}}
+                    <div class="form-group">
 
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                        <input type="text" class="form-control @error('address') form-error-inline @enderror" name="address" id="address" placeholder="House No., Street Name, Subdivision" value="{{ old('address') }}">
 
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        @error('address')
+                            <div class="form-error">
+                                {{ $message }}
                             </div>
-                        </div>
+                        @enderror
+                        
+                    </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
+                    {{-- Barangay --}}
+                    <div class="form-group">
+                        
+                        <select name="barangay" id="barangay" class="form-control @error('barangay') form-error-inline @enderror" value="{{ old('barangay') }}">
+                            <option value="" selected disabled>Barangay</option>
+                            <option value="Brgy. Almanza Uno" id="brgy1">Brgy. Almanza Uno</option>
+                            <option value="Brgy. Almanza Dos" id="brgy2">Brgy. Almanza Dos</option>
+                            <option value="Brgy. BF International" id="brgy3">Brgy. BF International</option>
+                            <option value="Brgy. CAA" id="brgy4">Brgy. CAA</option>
+                            <option value="Brgy. Daniel Fajardo" id="brgy5">Brgy. Daniel Fajardo</option>
+                            <option value="Brgy. Elias Aldana" id="brgy6">Brgy. Elias Aldana</option>
+                            <option value="Brgy. Ilaya" id="brgy7">Brgy. Ilaya</option>
+                            <option value="Brgy. Manuyo Uno" id="brgy8">Brgy. Manuyo Uno</option>
+                            <option value="Brgy. Manuyo Dos" id="brgy9">Brgy. Manuyo Dos</option>
+                            <option value="Brgy. Pamplona Uno" id="brgy10">Brgy. Pamplona Uno</option>
+                            <option value="Brgy. Pamplona Dos" id="brgy11">Brgy. Pamplona Dos</option>
+                            <option value="Brgy. Pamplona Tres" id="brgy12">Brgy. Pamplona Tres</option>
+                            <option value="Brgy. Pilar" id="brgy13">Brgy. Pilar</option>
+                            <option value="Brgy. Pulang Lupa Uno" id="brgy14">Brgy. Pulang Lupa Uno</option>
+                            <option value="Brgy. Pulang Lupa Dos" id="brgy15">Brgy. Pulang Lupa Dos</option>
+                            <option value="Brgy. Talon Uno" id="brgy16">Brgy. Talon Uno</option>
+                            <option value="Brgy. Talon Dos" id="brgy17">Brgy. Talon Dos</option>
+                            <option value="Brgy. Talon Tres" id="brgy18">Brgy. Talon Tres</option>
+                            <option value="Brgy. Talon Kuatro" id="brgy19">Brgy. Talon Kuatro</option>
+                            <option value="Brgy. Zapote" id="brgy20">Brgy. Zapote</option>
+                        </select>
+
+                        @error('barangay')
+                            <div class="form-error">
+                                {{ $message }}
                             </div>
+                        @enderror
+
+                    </div>
+
+                    <hr>
+
+                    {{-- Email and Number --}}
+                    <div class="form-row">
+                        <div class="form-group col-6">
+
+                            <input type="email" class="form-control @error('email') form-error-inline @enderror" name="email" id="email" placeholder="Email" value="{{ old('email') }}">
+
+                            @error('email')
+                                <div class="form-error">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
                         </div>
-                    </form>
-                </div>
+                        <div class="form-group col-6">
+                            
+                            <input type="number" class="form-control @error('mobile') form-error-inline @enderror" name="mobile" id="mobile" placeholder="Mobile Number" value="{{ old('mobile') }}">
+
+                            @error('mobile')
+                                <div class="form-error" role="alert">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                            
+                        </div>
+                    </div>
+                    
+                    {{-- Username --}}
+                    <div class="form-group">
+
+                        <input type="text" class="form-control @error('username') form-error-inline @enderror" name="username" id="username" placeholder="Username" value="{{ old('username') }}">
+
+                        @error('username')
+                            <div class="form-error">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                        
+                    </div>
+
+                    {{-- Password --}}
+                    <div class="form-row">
+                        <div class="form-group col-6">
+                            
+                            <input type="password" class="form-control @error('password') form-error-inline @enderror" name="password" id="password" placeholder="Password">
+
+                            @error('password')
+                                <div class="form-error">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
+                        </div>
+                        <div class="form-group col-6">
+                            
+                            <input type="password" class="form-control @error('password') form-error-inline @enderror" name="password_confirmation" id="password_confirmation" placeholder="Confirm Password">
+
+                            @error('password_confirmation')
+                                <div class="form-error">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
+                        </div>
+                    </div>
+
+                    <div class="form-group d-flex justify-content-center checkterms">
+                        <div class="form-check">
+                            
+                          <input class="form-check-input @error('tcagree') form-error-inline @enderror" type="checkbox" value="yes" id="tcagree">
+                          <label class="form-check-label" for="tcagree">
+                            I agree to the Terms and Conditions.
+                          </label>
+
+                            @error('tcagree')
+                                <div class="form-error">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+
+                    <a href="/terms-and-conditions">testing</a>
+                    <a href="/privacy-policy">testing</a>
+                
+                
+                </form>
+
             </div>
+
         </div>
-    </div>
-</div>
+
+</section>
+
 @endsection

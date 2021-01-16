@@ -35,28 +35,43 @@
 
                 <h3>Your active listings</h3>
 
-                {{-- @if ($posts->count())
-                    @foreach ($posts as $post)
+                <div class="messages">
+                    @include('inc.messages')
+                    @yield('content')
+                </div>
 
-                    <div class="archive-post">
-                        <a href="">{{ $post->user->username }}</a>
-                        <span>• {{ $post->created_at->diffForHumans() }}</span>
-                        <p>{{ $post->title }}</p>
+                @if ($posts->count())
+            
+                @foreach ($posts as $post)
+
+                <div class="listings">
+
+                    <h5><a href="/items/{{$post->id}}">{{ $post->title }}</a></h5>
+                    <p>{{ $post->category }} • {{ $post->created_at->diffForHumans() }}</p>
+
+                    <div class="listings-footer d-flex">
+                        
+                        <a href="/items/{{$post->id}}/edit" class="btn"><i class="fas fa-edit"></i>Edit</a>
+
+                        <form action="{{ route('items.destroy', $post->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn"><i class="fas fa-trash"></i>Delete</button>
+                        </form>
                     </div>
-                    <form action="{{ route('dashboard', $post) }}" method="post">
-
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit">Delete</button>
-
-                    </form>
-                    @endforeach
                     
-                @else
-                    <p>You currently have no active listings.</p>
-                    <a href="/register">Join the Las Piñas barter community</a>
-                @endif --}}
 
+                </div>
+
+    
+
+            @endforeach
+
+            @else
+
+            <p>There are currently no active listings.</p>
+
+            @endif 
                     
 
             </div>
@@ -68,37 +83,26 @@
 
             </div>
 
-        </div>
+            {{-- Account --}}
+            <div class="account-grid">
 
-        {{-- Account --}}
-        <div class="account-grid">
-
-            <h1>Account</h1>
-
-            <div class="avatar">
-
-                <div class="card-body">
-                    <form action="/upload" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <input type="file" name="image" id="avatar">
-                        <input type="submit" value="upload">
-                    </form>
-                </div> 
-
+                <h3>Account</h3>
+    
+                <div class="avatar">
+    
+                    <div class="card-body">
+                        <form action="/upload" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <input type="file" name="image" id="avatar">
+                            <input type="submit" value="upload">
+                        </form>
+                    </div> 
+    
+                </div>
+    
             </div>
 
         </div>
-
-        <div class="row">
-
-
-            
-
-            
-
-        </div>
-
-
 
        
             

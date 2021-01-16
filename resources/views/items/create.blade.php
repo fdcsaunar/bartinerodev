@@ -55,7 +55,7 @@
 
                     {{-- Upload Image --}}
                     <div class="form-group upload-image">
-                        <input type="images" name="images" id="images" class="form-control-file">
+                        <input type="file" name="images" id="images" class="form-control-file">
                     </div>
 
                     {{-- Body --}}
