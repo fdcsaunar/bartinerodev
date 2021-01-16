@@ -178,12 +178,12 @@
                     <div class="form-group d-flex justify-content-center checkterms">
                         <div class="form-check">
                             
-                          <input class="form-check-input @error('tcagree') form-error-inline @enderror" type="checkbox" value="yes" id="tcagree">
-                          <label class="form-check-label" for="tcagree">
-                            I agree to the Terms and Conditions.
+                          <input class="form-check-input @error('terms') form-error-inline @enderror" type=checkbox name="terms" id="terms"/>
+                          <label class="form-check-label" for="terms">
+                            <a href="/terms-and-conditions">I agree to the Terms and Conditions.</a>
                           </label>
 
-                            @error('tcagree')
+                            @error('terms')
                                 <div class="form-error">
                                     {{ $message }}
                                 </div>

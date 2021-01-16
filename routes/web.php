@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     
-    $posts = Post::take(8)->get();
+    $posts = Post::paginate(12);
 
     $posts = Post::orderBy('created_at', 'desc')->get();
 
@@ -29,8 +29,15 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/categories', function () {
-    return view('categories');
-});
+    
+    $posts = Post::take(8)->get();
+
+    $posts = Post::orderBy('created_at', 'desc')->get();
+
+        return view('categories', [
+            'posts' => $posts
+        ]);
+})->name('categories');
 
 Route::get('/deals', function () {
     return view('deals');
