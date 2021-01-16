@@ -39,6 +39,10 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <form class="form-inline mr-auto ml-auto">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search an item..." aria-label="Search">
+                            {{-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> --}}
+                        </form>
                         <li class="nav-item">
                             <a href="/categories" class="nav-link">Categories</a>
                         </li>
