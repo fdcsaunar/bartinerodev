@@ -18,29 +18,56 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    
-    $posts = Post::take(8)->get();
 
-    $posts = Post::orderBy('created_at', 'desc')->get();
+    // $posts = Post::take(8)->get();
 
-        return view('home', [
-            'posts' => $posts
-        ]);
+    $posts = Post::take(8)->orderBy('created_at', 'desc')->get();
+
+    return view('home', [
+        'posts' => $posts
+    ]);
 })->name('home');
 
 Route::get('/categories', function () {
-    
-    $posts = Post::paginate(12);
 
     $posts = Post::orderBy('created_at', 'desc')->get();
 
-        return view('categories', [
-            'posts' => $posts
-        ]);
+    return view('categories', [
+        'posts' => $posts
+    ]);
 })->name('categories');
+
+Route::get('/category/{cat}', function ($cat = null) {
+    if ($cat) {
+        $posts = Post::orderBy('created_at', 'desc')->where('category', '=', $cat)->get();
+    } else {
+        $posts = Post::orderBy('created_at', 'desc')->get();
+    }
+    return view('category', [
+        'posts' => $posts
+    ]);
+})->name('category');
 
 Route::get('/deals', function () {
     return view('deals');
+});
+
+Route::get('/search', function () {
+    $keyword = (isset($_GET['query'])) ? $_GET['query'] : '';
+    if ($keyword == "") {
+        $posts = array();
+    } else {
+        $posts = Post::orderBy('created_at', 'desc')
+        ->where('title', 'LIKE', '%'.$keyword.'%')
+        ->orWhere('category', 'LIKE', '%'.$keyword.'%')
+        ->orWhere('description', 'LIKE', '%'.$keyword.'%')
+        ->orWhere('lookingfor', 'LIKE', '%'.$keyword.'%')
+        ->get();
+    }
+    return view('search', [
+        'keyword' => $keyword,
+        'posts' => $posts
+    ]);
 });
 
 //Route::get('/trade', function () {
@@ -66,7 +93,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::resource('items', PostsController::class);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
-->name('dashboard');
+    ->name('dashboard');
 
 Auth::routes();
 
