@@ -22,7 +22,7 @@
                 <img class="img-fluid" src="{{ asset('img/barter-arrows-alt.png') }}" alt="">
             </div>
         </div>
-
+        
     </div>
 </section>
 
@@ -41,7 +41,7 @@
                     <h1>Post a deal.</h1>
                     <p>Barter old or new items. Even services.</p>
                 </div>
-
+                    
             </div>
 
             <div class="col-lg-3 d-flex align-items-baseline">
@@ -53,7 +53,7 @@
                 <div class="byline-text">
                     <h1>Choose an offer.</h1>
                     <p>Plenty of options to choose from.</p>
-                </div>
+                </div> 
 
             </div>
 
@@ -62,12 +62,12 @@
                 <div class="d-flex justify-content-center align-items-center byline-icon">
                     <i class="fas fa-handshake"></i>
                 </div>
-
+                
                 <div class="byline-text">
                     <h1>Trade with ease.</h1>
                     <p>Communicate within the site.</p>
                 </div>
-
+                
             </div>
 
         </div>
@@ -85,63 +85,63 @@
         <div class="row justify-content-around">
 
             <div class="col">
-                <a href="/category/food">
+                <a href="/">
                     <i class="fas fa-utensils"></i>
                     <h3>Food</h3>
                 </a>
             </div>
 
             <div class="col">
-                <a href="/category/electronics">
+                <a href="/">
                     <i class="fas fa-mobile"></i>
                     <h3>Electronics</h3>
                 </a>
             </div>
 
             <div class="col">
-                <a href="/category/gardening">
+                <a href="/">
                     <i class="fas fa-leaf"></i>
                     <h3>Gardening</h3>
                 </a>
             </div>
 
             <div class="col">
-                <a href="/category/clothing">
+                <a href="/">
                     <i class="fas fa-tshirt"></i>
                     <h3>Clothing</h3>
                 </a>
             </div>
 
             <div class="col">
-                <a href="/category/services">
+                <a href="/">
                     <i class="fas fa-tools"></i>
                     <h3>Services</h3>
                 </a>
             </div>
 
             <div class="col">
-                <a href="/category">
+                <a href="/">
                     <i class="fas fa-car"></i>
                     <h3>Automotives</h3>
                 </a>
             </div>
 
             <div class="col">
-                <a href="/category/wellness">
+                <a href="/">
                     <i class="fas fa-heart"></i>
                     <h3>Wellness</h3>
                 </a>
             </div>
 
             <div class="col">
-                <a href="/category/furniture">
+                <a href="/">
                     <i class="fas fa-couch"></i>
                     <h3>Furniture</h3>
                 </a>
             </div>
 
             <div class="col">
-                <a href="/category/others">
+                <a href="/">
                     <i class="fas fa-shapes"></i>
                     <h3>Others</h3>
                 </a>
@@ -161,21 +161,19 @@
         <p>Start trading with a Las Piñero</p>
 
         <div class="wrapper">
-
+            
             @if ($posts->count())
-
+            
             @foreach ($posts as $post)
 
             <div class="card">
 
-                <?php
-                $post->images = json_decode($post->images);
-                ?>
-
+                
+                
                 <div class="card-top">
-                    <img src="{{ asset('storage/img/'.$post->images[0]) }}" alt="" class="card-img-top">
+                    <img src="/storage/img/{{$post->images}}" alt="" class="card-img-top">
                 </div>
-
+                
                 <div class="card-body">
                     <p>{{ $post->user->username }} • {{ $post->category }} • {{ $post->created_at->diffForHumans() }}</p>
                     <h5 class="card-title">
@@ -184,7 +182,7 @@
                 </div>
             </div>
 
-
+    
 
             @endforeach
 
@@ -192,8 +190,8 @@
 
             <p>There are currently no active listings.</p>
 
-            @endif
-
+            @endif 
+       
         </div>
 
         <div class="ld-cta justify-content-center d-flex"><a href="/items" class="cta-regular">View more posts</a></div>
@@ -217,7 +215,7 @@
                     </div>
                 </div>
             </div>
-
+    
             <div class="col-lg-3">
                 <div class="card">
                     <div class="card-body">
@@ -228,7 +226,7 @@
                     </div>
                 </div>
             </div>
-
+    
             <div class="col-lg-3">
                 <div class="card">
                     <div class="card-body">
@@ -249,7 +247,7 @@
     </div>
 </section>
 
-
-
+           
+ 
 
 @endsection
