@@ -55,7 +55,7 @@
 
                     {{-- Upload Image --}}
                     <div class="form-group upload-image">
-                        <input type="file" name="images[]" id="images" class="form-control-file" multiple>
+                        <input type="file" name="images" id="images" class="form-control-file">
                     </div>
 
                     {{-- Body --}}
