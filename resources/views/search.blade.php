@@ -2,27 +2,21 @@
 
 @section('content')
 
-<section id="new-deals">
+<section id="featured-deals">
 
     <div class="container">
 
-        <div class="deals-header d-flex justify-content-between">
-            <div class="section-header">
-                <h1>Latest deals</h1>
-            </div>
-            <div class="sorting d-flex">
-                <h4>Sort by date</h4>
-                <h4>Sort by category</h4>
-            </div>
-        </div>
+        <h1>Search results for keyword "{{$keyword}}"</h1>
+        <p>Start trading with a Las Piñero</p>
 
         <div class="wrapper">
 
-            @if ($posts->count())
+            @if (count($posts)>0)
 
             @foreach ($posts as $post)
 
             <div class="card">
+
                 <?php
                 $post->images = json_decode($post->images);
                 ?>
@@ -32,18 +26,18 @@
                 </div>
 
                 <div class="card-body">
-                    <p>{{ $post->user->username }} • {{ $post->category }} • {{ $post->created_at->diffForHumans() }}</p>
+                    <p>{{ $post->user->name }} • {{ $post->category }} • {{ $post->created_at->diffForHumans() }}</p>
                     <h5 class="card-title">
                         <a href="/items/{{$post->id}}">{{ $post->title }}</a>
                     </h5>
                 </div>
             </div>
 
+
+
             @endforeach
 
             @else
-
-            <h1>There are currently no active listings.</h1>
 
             <p>There are currently no active listings.</p>
 
@@ -53,8 +47,8 @@
 
     </div>
 
-
 </section>
+
 
 
 @endsection

@@ -15,8 +15,6 @@
     <div class="container">
 
         <h1>Choose a category</h1>
-
-
         <div class="row justify-content-around">
 
             <div class="col">
@@ -102,6 +100,7 @@
             @foreach ($posts as $post)
 
             <div class="card">
+
                 <?php
                 $post->images = json_decode($post->images);
                 ?>

@@ -25,11 +25,11 @@
                     <div class="form-group">
                         <input type="text" class="form-control @error('title') form-error-inline @enderror" name="title" id="title" placeholder="What are you listing today?" value="{{ $post->title }}">
 
-                            @error('title')
-                                <div class="form-error">
-                                    {{ $message }}
-                                </div>
-                            @enderror
+                        @error('title')
+                        <div class="form-error">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
 
                     {{-- Category --}}
@@ -48,26 +48,26 @@
                         </select>
 
                         @error('category')
-                            <div class="form-error">
-                                {{ $message }}
-                            </div>
+                        <div class="form-error">
+                            {{ $message }}
+                        </div>
                         @enderror
                     </div>
 
                     {{-- Upload Image --}}
                     <div class="form-group upload-image">
-                        <input type="file" name="images" id="images" class="form-control-file">
+                        <input type="file" name="images[]" id="images" class="form-control-file" multiple>
                     </div>
 
                     {{-- Body --}}
                     <div class="form-group">
 
-                        <textarea class="form-control @error('description') form-error-inline @enderror" id="description" name="description" value="{{ $post->description }}" rows="3" placeholder="Tell us about the item or service you're listing..."></textarea>
+                        <textarea class="form-control @error('description') form-error-inline @enderror" id="description" name="description" value="" rows="3" placeholder="Tell us about the item or service you're listing...">{{ $post->description }}</textarea>
 
                         @error('description')
-                            <div class="form-error">
-                                {{ $message }}
-                            </div>
+                        <div class="form-error">
+                            {{ $message }}
+                        </div>
                         @enderror
 
                     </div>
@@ -80,9 +80,9 @@
                         <input type="text" class="form-control @error('lookingfor') form-error-inline @enderror" name="lookingfor" id="lookingfor" placeholder="What would you like to trade for?" value="{{ $post->lookingfor }}">
 
                         @error('lookingfor')
-                            <div class="form-error">
-                                {{ $message }}
-                            </div>
+                        <div class="form-error">
+                            {{ $message }}
+                        </div>
                         @enderror
 
                     </div>
@@ -93,7 +93,7 @@
                         <p>Please note that trading of medicines, firearms, or offering of malicious services are strictly prohibited. Termination of account will be the result if a user does not comply.</p>
                     </div>
 
-                    
+
 
                     <button type="submit" class="btn btn-success">Submit</button>
 
@@ -108,5 +108,3 @@
 </section>
 
 @endsection
-
-
