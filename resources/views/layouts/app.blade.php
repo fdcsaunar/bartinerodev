@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,15 +18,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-
 <body>
-    <div id="app">
+    <div id="app"> 
         <nav class="navbar navbar-expand-md navbar-light sticky-top bg-white">
             <div class="container">
                 <a href="{{ url('/') }}" class="navbar-brand">
@@ -45,8 +39,8 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <form class="form-inline mr-auto ml-auto" method="get" action="/search">
-                            <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search an item..." aria-label="Search" required>
+                        <form class="form-inline mr-auto ml-auto">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search an item..." aria-label="Search">
                             {{-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> --}}
                         </form>
                         <li class="nav-item">
@@ -54,42 +48,43 @@
                         </li>
                         <!-- Authentication Links -->
                         @guest
-                        @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @endif
-
-                        @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('items.create') }}" class="nav-link altrade">Trade</a>
-                        </li>
-                        @endif
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+                            
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('items.create') }}" class="nav-link altrade">Trade</a>
+                                </li>
+                            @endif
                         @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->firstname }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->firstname }}
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
 
-                        <li class="nav-item">
-                            <a href="{{ route('items.create') }}" class="nav-link altrade">Trade</a>
-                        </li>
-                        </li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+
+                                <li class="nav-item">
+                                    <a href="{{ route('items.create') }}" class="nav-link altrade">Trade</a>
+                                </li>
+                            </li>
                         @endguest
                     </ul>
                 </div>
@@ -105,7 +100,7 @@
 <footer>
 
     <div class="container">
-
+        
         <div class="row justify-content-between">
 
             <div class="col">
@@ -122,7 +117,7 @@
                         <li><a href="/items/create">Trade</a></li>
                     </ul>
                 </div>
-
+    
                 <div class="col-auto">
                     <h4>ABOUT</h4>
                     <ul>
@@ -131,7 +126,7 @@
                         <li><a href="/about#prohibited">Prohibited Items</a></li>
                     </ul>
                 </div>
-
+    
                 <div class="col-auto">
                     <h4>ACCOUNT</h4>
                     <ul>
@@ -141,7 +136,7 @@
                         <li><a href="/dashboard">Messages</a></li>
                     </ul>
                 </div>
-
+    
                 <div class="col-auto">
                     <h4>POLICY CENTER</h4>
                     <ul>
@@ -157,5 +152,4 @@
     </div>
 
 </footer>
-
 </html>
