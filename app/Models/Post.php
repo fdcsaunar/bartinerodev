@@ -9,19 +9,19 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];  
+    protected $guarded = [];
 
     protected $fillable = [
         'title', 'category', 'images', 'description', 'images', 'lookingfor'
     ];
 
-    public function user() {
-
+    public function user()
+    {
         return $this->belongsTo(User::class);
-
     }
 
-
-
-
+    public function thisuser()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

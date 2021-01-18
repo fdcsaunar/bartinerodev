@@ -2,64 +2,57 @@
 
 @section('content')
 
-    <section id="new-deals">
+<section id="new-deals">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="deals-header d-flex justify-content-between">
-                <div class="section-header">
-                    <h1>Latest deals</h1>
+        <div class="deals-header d-flex justify-content-between">
+            <div class="section-header">
+                <h1>Latest deals</h1>
+            </div>
+            <div class="sorting d-flex">
+                <h4>Sort by date</h4>
+                <h4>Sort by category</h4>
+            </div>
+        </div>
+
+        <div class="wrapper">
+
+            @if ($posts->count())
+
+            @foreach ($posts as $post)
+
+            <div class="card">
+                <?php
+                $post->images = json_decode($post->images);
+                ?>
+
+                <div class="card-top">
+                    <img src="{{ asset('storage/img/'.$post->images[0]) }}" alt="" class="card-img-top">
                 </div>
-                <div class="sorting d-flex">
-                    <h4>Sort by date</h4>
-                    <h4>Sort by category</h4>
+
+                <div class="card-body">
+                    <p>{{ $post->user->username }} • {{ $post->category }} • {{ $post->created_at->diffForHumans() }}</p>
+                    <h5 class="card-title">
+                        <a href="/items/{{$post->id}}">{{ $post->title }}</a>
+                    </h5>
                 </div>
             </div>
 
-            <div class="wrapper">
+            @endforeach
 
-                    @if ($posts->count())
-                    
-                    @foreach ($posts as $post)
+            @else
 
-                    <div class="card">
+            <h1>There are currently no active listings.</h1>
 
-                
-                
-                        <div class="card-top">
-                            <img src="/storage/img/{{$post->images}}" alt="" class="card-img-top">
-                        </div>
-                        
-                        <div class="card-body">
-                        <p>{{ $post->user->username }} • {{ $post->category }} • {{ $post->created_at->diffForHumans() }}</p>
-                            <h5 class="card-title">
-                                <a href="/items/{{$post->id}}">{{ $post->title }}</a>
-                            </h5>
-                        </div>
-                    </div>
+            <p>There are currently no active listings.</p>
 
-                    @endforeach
-
-                    @else
-
-                    <h1>There are currently no active listings.</h1>
-
-                    <p>There are currently no active listings.</p>
-
-<<<<<<< HEAD
             @endif
-=======
-                    @endif
-
-            </div>
->>>>>>> 5e328cbb58e13e6c477bb31152ec4b20c99324d9
 
         </div>
 
 
-    </section>
+</section>
 
 
 @endsection
-
-

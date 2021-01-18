@@ -5,7 +5,7 @@
 <section id="categories-hero">
     <div class="container">
         <div class="hero-slider">
-            <div><img src="{{ asset('img/cat-banner-sample.png') }}" alt=""></div>
+            <div><img src="{{ asset('img/'.$banner) }}" alt="" class="w-100"></div>
         </div>
     </div>
 </section>

@@ -11,9 +11,9 @@
 
         <div class="wrapper">
 
-            @if (count($posts)>0)
+            @if (count($postSearch)>0)
 
-            @foreach ($posts as $post)
+            @foreach ($postSearch as $post)
 
             <div class="card">
 
@@ -47,12 +47,54 @@
 
         <h1 style="margin-top: 2rem;">What people are looking for...</h1>
 
-        <div class="wrapper">12</div>
+        <div class="wrapper">
+
+            @if (count($postLooking)>0)
+
+            @foreach ($postLooking as $post)
+
+            <div class="card">
+
+                <div class="card-body">
+                    <p>{{ $post->created_at->diffForHumans() }}</p>
+                    <p>{{ $post->user->username }} is looking for...</p>
+                    <h5 class="card-title">
+                        <a href="/items/{{$post->id}}">{{ $post->lookingfor }}</a>
+                    </h5>
+                </div>
+            </div>
+
+            @endforeach
+
+            @else
+
+            <p>There are currently no active listings.</p>
+
+            @endif
+
+        </div>
 
 
-        <h1>Users</h1>
+        <h1 style="margin-top: 2rem;">Users</h1>
 
-        <div class="wrapper">12</div>
+        <div class="wrapper">
+            @if (count($users)>0)
+
+            @foreach ($users as $user)
+            <div class="card">
+                <div class="card-body">
+                    <p><b>Name:</b> {{ $user->firstname }} {{ $user->lastname }}</p>
+                    <p><b>Gender:</b> {{ $user->gender }}</p>
+                    <p><b>Email:</b> {{ $user->email }}</p>
+                    <p><b>Mobile:</b> {{ $user->mobile }}</p>
+                    <p><b>Address:</b> {{ $user->address }}</p>
+                </div>
+            </div>
+            @endforeach
+            @else
+            <p>No user found.</p>
+            @endif
+        </div>
 
     </div>
 
