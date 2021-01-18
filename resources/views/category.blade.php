@@ -10,92 +10,17 @@
     </div>
 </section>
 
-<section id="categories-menu">
-
-    <div class="container">
-
-        <h1>Choose a category</h1>
-        <div class="row justify-content-around">
-
-            <div class="col">
-                <a href="/category/food">
-                    <i class="fas fa-utensils"></i>
-                    <h3>Food</h3>
-                </a>
-            </div>
-
-            <div class="col">
-                <a href="/category/electronics">
-                    <i class="fas fa-mobile"></i>
-                    <h3>Electronics</h3>
-                </a>
-            </div>
-
-            <div class="col">
-                <a href="/category/gardening">
-                    <i class="fas fa-leaf"></i>
-                    <h3>Gardening</h3>
-                </a>
-            </div>
-
-            <div class="col">
-                <a href="/category/clothing">
-                    <i class="fas fa-tshirt"></i>
-                    <h3>Clothing</h3>
-                </a>
-            </div>
-
-            <div class="col">
-                <a href="/category/services">
-                    <i class="fas fa-tools"></i>
-                    <h3>Services</h3>
-                </a>
-            </div>
-
-            <div class="col">
-                <a href="/category">
-                    <i class="fas fa-car"></i>
-                    <h3>Automotives</h3>
-                </a>
-            </div>
-
-            <div class="col">
-                <a href="/category/wellness">
-                    <i class="fas fa-heart"></i>
-                    <h3>Wellness</h3>
-                </a>
-            </div>
-
-            <div class="col">
-                <a href="/category/furniture">
-                    <i class="fas fa-couch"></i>
-                    <h3>Furniture</h3>
-                </a>
-            </div>
-
-            <div class="col">
-                <a href="/category/others">
-                    <i class="fas fa-shapes"></i>
-                    <h3>Others</h3>
-                </a>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
 <section id="featured-deals">
 
     <div class="container">
 
-        <h1>Check out these latest deals</h1>
-        <p>Start trading with a Las Piñero</p>
+        <h1>Category</h1>
 
         <div class="wrapper">
 
             @if ($posts->count())
+
+            
 
             @foreach ($posts as $post)
 

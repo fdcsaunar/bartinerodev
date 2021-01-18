@@ -120,7 +120,7 @@
             </div>
 
             <div class="col">
-                <a href="/category">
+                <a href="/category/automotives">
                     <i class="fas fa-car"></i>
                     <h3>Automotives</h3>
                 </a>

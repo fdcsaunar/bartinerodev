@@ -45,10 +45,18 @@
 
         </div>
 
+        <h1 style="margin-top: 2rem;">What people are looking for...</h1>
+
+        <div class="wrapper">12</div>
+
+
+        <h1>Users</h1>
+
+        <div class="wrapper">12</div>
+
     </div>
 
 </section>
-
 
 
 @endsection

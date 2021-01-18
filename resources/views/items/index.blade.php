@@ -45,8 +45,6 @@
 
             <h1>There are currently no active listings.</h1>
 
-            <p>There are currently no active listings.</p>
-
             @endif
 
         </div>

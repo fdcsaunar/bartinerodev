@@ -43,14 +43,48 @@
 
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav">
+
                         <form class="form-inline mr-auto ml-auto" method="get" action="/search">
                             <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search an item..." aria-label="Search" required>
                             {{-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> --}}
                         </form>
-                        <li class="nav-item">
-                            <a href="/categories" class="nav-link">Categories</a>
+
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        
+
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Categories
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="/categories">All Categories</a>
+
+                                <a class="dropdown-item" href="/category/food"><i class="fas fa-utensils"></i>Food</a>
+                                
+                                <a class="dropdown-item" href="/category/electronics"><i class="fas fa-mobile"></i>Electronics</a>
+
+                                <a class="dropdown-item" href="/category/gardening"><i class="fas fa-leaf"></i>Gardening</a>
+
+                                <a class="dropdown-item" href="/category/clothing"><i class="fas fa-tshirt"></i>Clothing</a>
+
+                                <a class="dropdown-item" href="/category/services"><i class="fas fa-tools"></i>Services</a>
+
+                                <a class="dropdown-item" href="/category/automotives"><i class="fas fa-car"></i>Automotives</a>
+
+                                <a class="dropdown-item" href="/category/wellness"><i class="fas fa-heart"></i>Wellness</a>
+
+                                <a class="dropdown-item" href="/category/furniture"><i class="fas fa-couch"></i>Furniture</a>
+
+                                <a class="dropdown-item" href="/category/others"><i class="fas fa-shapes"></i>Others</a>
+
+
+
+                            </div>
                         </li>
                         <!-- Authentication Links -->
                         @guest
@@ -86,9 +120,9 @@
                                 </form>
                             </div>
 
-                        <li class="nav-item">
-                            <a href="{{ route('items.create') }}" class="nav-link altrade">Trade</a>
-                        </li>
+                            <li class="nav-item">
+                                <a href="{{ route('items.create') }}" class="nav-link altrade">Trade</a>
+                            </li>
                         </li>
                         @endguest
                     </ul>
