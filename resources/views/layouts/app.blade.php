@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,15 +18,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css" />
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-
 <body>
-    <div id="app">
+    <div id="app"> 
         <nav class="navbar navbar-expand-md navbar-light sticky-top bg-white">
             <div class="container">
                 <a href="{{ url('/') }}" class="navbar-brand">
@@ -88,33 +82,27 @@
                         </li>
                         <!-- Authentication Links -->
                         @guest
-                        @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @endif
-
-                        @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('items.create') }}" class="nav-link altrade">Trade</a>
-                        </li>
-                        @endif
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+                            
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('items.create') }}" class="nav-link altrade">Trade</a>
+                                </li>
+                            @endif
                         @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->firstname }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->firstname }}
                                 </a>
 
+<<<<<<< HEAD
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
@@ -124,6 +112,25 @@
                                 <a href="{{ route('items.create') }}" class="nav-link altrade">Trade</a>
                             </li>
                         </li>
+=======
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+
+                                <li class="nav-item">
+                                    <a href="{{ route('items.create') }}" class="nav-link altrade">Trade</a>
+                                </li>
+                            </li>
+>>>>>>> 5e328cbb58e13e6c477bb31152ec4b20c99324d9
                         @endguest
                     </ul>
                 </div>
@@ -139,7 +146,7 @@
 <footer>
 
     <div class="container">
-
+        
         <div class="row justify-content-between">
 
             <div class="col">
@@ -156,7 +163,7 @@
                         <li><a href="/items/create">Trade</a></li>
                     </ul>
                 </div>
-
+    
                 <div class="col-auto">
                     <h4>ABOUT</h4>
                     <ul>
@@ -165,7 +172,7 @@
                         <li><a href="/about#prohibited">Prohibited Items</a></li>
                     </ul>
                 </div>
-
+    
                 <div class="col-auto">
                     <h4>ACCOUNT</h4>
                     <ul>
@@ -175,7 +182,7 @@
                         <li><a href="/dashboard">Messages</a></li>
                     </ul>
                 </div>
-
+    
                 <div class="col-auto">
                     <h4>POLICY CENTER</h4>
                     <ul>
@@ -191,5 +198,4 @@
     </div>
 
 </footer>
-
 </html>
