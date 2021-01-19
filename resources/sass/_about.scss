@@ -1,64 +1,296 @@
-#about {
-
-    padding: 2rem;
+#about-hero {
+    display: flex;
+    align-items: center;
+    min-height: 600px;
+    padding: 2rem 0;
     font-family: 'DM Sans', sans-serif;
 
-    h1 {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 2rem;
-    }
+    .col-lg-4 {
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            letter-spacing: -0.15rem;
+            color: black;
+            line-height: 4.50rem;
+        }
+        p {
+            padding-top: 1rem;
+            color: #b8b8b8;
+            line-height: 2rem;
+            font-size: 0.9rem;
+        }
+        .hero-cta {
+            display: flex;
+            margin: 2rem 0;
 
-    h3 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
-    }
-
-    p {
-        margin-bottom: 1.5rem;
-        color: black;
-        font-size: 1rem;
-        line-height: 1.7rem;
-    }
-
-    ul {
-        margin-bottom: 1.5rem;
-
-        li {
-            margin-bottom: 0.5rem;
+            a {
+                font-size: 0.8rem;
+                text-decoration: none;
+                margin-right: 1rem;
+            }
         }
     }
 }
 
+#about-more {
+
+    padding: 2rem 0;
+
+    .col-lg-4 {
+        .card {
+            border: 0;
+            .card-body {
+                padding: 2rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+                font-weight: 700;
+                letter-spacing: -0.1rem;
+            }
+            p {
+                color: #b8b8b8;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    h1 {
+        font-family: 'DM Sans', sans-serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: black;
+    }
+
+    p {
+        font-family: 'DM Sans', sans-serif;
+        color: #b8b8b8;
+        margin-bottom: 0;
+    }
+
+    .cta-footer {
+
+        p {
+            font-family: 'DM Sans', sans-serif;
+            color: black;
+            margin-bottom: 0;
+        }
+
+        a {
+            font-family: "DM Sans", sans-serif;
+            color: black;
+            padding: 0 1rem;
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            border: 1px solid black;
+            border-radius: 4px;
+            margin: 0 1rem;
+        }
+
+        a:nth-child(2) {
+            color: white;
+        }
+    }
+
+}
+
+
 #questions {
 
-    padding: 2rem;
+    padding: 2rem 0;
     font-family: 'DM Sans', sans-serif;
 
     h1 {
         font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 2rem;
+        font-weight: 700;
+        letter-spacing: -0.1rem;
+        color: black;
+        line-height: 4.50rem;
     }
 
     h3 {
         font-size: 1.5rem;
-        font-weight: bold;
-        margin-bottom: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.04rem;
+        color: #b8b8b8;
     }
 
     p {
-        margin-bottom: 1.5rem;
-        font-size: 1rem;
         line-height: 1.7rem;
+        font-size: 0.9rem;
+        color: black;
     }
 
-    ul {
-        margin-bottom: 1.5rem;
+    .faq {
+        padding: 1rem 0;
+    }
 
-        li {
-            margin-bottom: 0.5rem;
+    #answer1, #answer2, #answer3, #answer4, #answer5, #answer6, #answer7, #answer8  {
+        display: none;
+    }
+
+}
+
+@media (max-width: 1366px) {
+
+    #about-hero {
+        padding: 2rem;
+    
+        .col-lg-4 {
+            h1 {
+                font-size: 3rem;
+                line-height: 3.5rem;
+            }
+            p {
+                padding-top: 1rem;
+                color: #b8b8b8;
+                line-height: 2rem;
+                font-size: 0.9rem;
+            }
+            .hero-cta {
+                display: flex;
+                margin: 2rem 0;
+    
+                a {
+                    text-decoration: none;
+                    margin-right: 1rem;
+                }
+            }
         }
     }
+}
+
+@media (max-width: 1038px) {
+
+    #about-hero {
+        padding: 2rem;
+    
+        .col-lg-4 {
+
+            padding: 0;
+
+            h1 {
+                font-size: 2.5rem;
+                line-height: 3rem;
+            }
+            p {
+                padding-top: 1rem;
+                color: #b8b8b8;
+                line-height: 2rem;
+                font-size: 0.9rem;
+            }
+            .hero-cta {
+
+                a {
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+
+    #about-hero {
+
+        padding: 2rem;
+
+        .col-lg-4 {
+            h1 {
+                font-size: 2.5rem;
+                line-height: 3rem;
+                text-align: center;
+            }
+            p {
+                padding-top: 1rem;
+                color: #b8b8b8;
+                line-height: 2rem;
+                font-size: 0.9rem;
+            }
+            .hero-cta {
+                display: flex;
+                margin: 2rem 0;
+                align-items: center;
+                justify-content: center;
+    
+                a {
+                    text-decoration: none;
+                    margin: 0 1rem;
+                }
+            }
+        }
+    }
+    
+    #questions {
+    
+        padding: 2rem;
+        font-family: 'DM Sans', sans-serif;
+
+        .col-lg-8 {
+            padding: 0;
+        }
+    
+        h1 {
+            font-size: 2.5rem;
+        }
+    
+        h3 {
+            font-size: 1.25rem;
+            text-align: left;
+        }
+    
+    }
+
+}
+
+@media (max-width: 771px) {
+
+    #about-hero {
+
+        padding: 2rem;
+
+        .col-lg-4 {
+            h1 {
+                font-size: 2.5rem;
+                line-height: 3rem;
+                text-align: center;
+            }
+            p {
+                padding-top: 1rem;
+                color: #b8b8b8;
+                line-height: 1.8rem;
+                font-size: 0.8rem;
+            }
+            .hero-cta {
+                display: flex;
+                margin: 2rem 0;
+    
+                a {
+                    text-decoration: none;
+                    margin: 0 1rem;
+                }
+            }
+        }
+    }
+    
+    #questions {
+    
+        padding: 2rem;
+        font-family: 'DM Sans', sans-serif;
+
+        .col-lg-8 {
+            padding: 0;
+        }
+    
+        h1 {
+            font-size: 2.5rem;
+        }
+    
+        h3 {
+            font-size: 1.25rem;
+            text-align: left;
+        }
+    
+    }
+
 }

@@ -14,7 +14,7 @@
 
     <div class="container">
 
-        <h1>Category</h1>
+        <h1>Check out these latest deals</h1>
 
         <div class="wrapper">
 

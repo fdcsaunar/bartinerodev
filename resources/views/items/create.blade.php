@@ -8,9 +8,9 @@
 
         <div class="row justify-content-center align-items-center">
 
-            <div class="col-lg-4">
+            <div class="col-lg-6">
 
-                <h1>What do you<br>have to barter?</h1>
+                <h1>What do you have to barter?</h1>
 
                 <div class="location">
                     <p><i class="fas fa-location-arrow"></i>You are posting from barangay.</p>
@@ -23,7 +23,6 @@
                     {{-- Listing title --}}
                     <div class="form-group">
                         <input type="text" class="form-control @error('title') form-error-inline @enderror" name="title" id="title" placeholder="What are you listing today?" value="{{ old('title') }}">
-
                             @error('title')
                                 <div class="form-error">
                                     {{ $message }}
@@ -55,7 +54,7 @@
 
                     {{-- Upload Image --}}
                     <div class="form-group upload-image">
-                        <input type="file" name="images[]" id="images" class="form-control-file" multiple>
+                        <input type="file" name="images[]" id="images" class="cta-regular" multiple>
                     </div>
 
                     {{-- Body --}}
