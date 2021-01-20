@@ -54,7 +54,7 @@
 
                     {{-- Upload Image --}}
                     <div class="form-group upload-image">
-                        <input type="file" name="images[]" id="images" class="cta-regular" multiple>
+                        <input type="file" name="images[]" id="images" class="form-control-file" multiple>
                     </div>
 
                     {{-- Body --}}

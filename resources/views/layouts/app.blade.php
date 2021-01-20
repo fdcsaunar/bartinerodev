@@ -13,6 +13,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/7586c5b6d3.js" crossorigin="anonymous"></script>
+    <script src="./path/to/dropzone.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -105,6 +106,7 @@
                         </li>
                         <!-- Authentication Links -->
                         @guest
+
                         @if (Route::has('login'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -116,7 +118,7 @@
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('items.create') }}" class="nav-link altrade">Trade</a>
+                            <a href="{{ route('register') }}" class="nav-link altrade">Trade</a>
                         </li>
                         @endif
                         @else
