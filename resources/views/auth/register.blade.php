@@ -6,7 +6,7 @@
 
     <div class="container">
 
-        <h2 style="font-size: 2rem">Register</h2>
+        <h2>Register</h2>
 
         <div class="row justify-content-center">
 

@@ -14,7 +14,8 @@ jQuery(document).ready(function($){
         autoplaySpeed: 3000,
         dots: false,
         prevArrow: false,
-        nextArrow: false
+        nextArrow: false,
+        pauseOnFocus: true
       });
 });
 

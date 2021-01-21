@@ -31,43 +31,27 @@
 
         <div class="row justify-content-center">
 
-            <div class="col-lg-3 d-flex align-items-baseline">
-
-                <div class="d-flex justify-content-center align-items-center byline-icon">
-                    <i class="fas fa-plus"></i>
-                </div>
+            <div class="col-lg-3 d-flex align-items-center">
 
                 <div class="byline-text">
-                    <h1>Post a deal.</h1>
+                    <h1><i class="fas fa-plus"></i>Post a deal</h1>
                     <p>Barter old or new items. Even services.</p>
                 </div>
 
             </div>
 
-            <div class="col-lg-3 d-flex align-items-baseline">
-
-                <div class="d-flex justify-content-center align-items-center byline-icon">
-                    <i class="fas fa-mouse-pointer"></i>
-                </div>
-
+            <div class="col-lg-3 d-flex align-items-center">
                 <div class="byline-text">
-                    <h1>Choose an offer.</h1>
+                    <h1><i class="fas fa-mouse-pointer"></i>Choose an offer</h1>
                     <p>Plenty of options to choose from.</p>
                 </div>
-
             </div>
 
             <div class="col-lg-3 d-flex align-items-baseline">
-
-                <div class="d-flex justify-content-center align-items-center byline-icon">
-                    <i class="fas fa-handshake"></i>
-                </div>
-
                 <div class="byline-text">
-                    <h1>Trade with ease.</h1>
+                    <h1><i class="fas fa-handshake"></i>Trade with ease</h1>
                     <p>Communicate within the site.</p>
                 </div>
-
             </div>
 
         </div>
@@ -174,7 +158,7 @@
                 ?>
 
                 <div class="card-top">
-                    <img src="{{ asset('storage/img/'.$post->images[0]) }}" alt="" class="card-img-top">
+                    <a href="/items/{{$post->id}}"><img src="{{ asset('storage/img/'.$post->images[0]) }}" alt="" class="card-img-top"></a>
                 </div>
                 <div class="card-body">
                     <p>{{ $post->user->username }} • {{ $post->category }} • {{ $post->created_at->diffForHumans() }}</p>
