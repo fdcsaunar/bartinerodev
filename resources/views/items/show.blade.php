@@ -40,7 +40,7 @@
                 
                 <div class="post-header justify-content-between d-flex">
                     <div class="phleft">
-                        <a href="/category/{{ $post->category }}"><i class="fas fa-mobile"></i>{{ $post->category }}</a>
+                        <a href="/category/{{ $post->category }}">{{ $post->category }}</a>
                     </div>
                     <div class="phright d-flex">
                         <p><i class="fas fa-clock"></i>{{ $post->created_at->diffForHumans() }}</p>

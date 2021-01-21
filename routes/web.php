@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Models\User;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Auth;
@@ -109,6 +110,9 @@ Route::resource('items', PostsController::class);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->name('dashboard');
+
+Route::get('/admin', [AdminController::class, 'index'])
+    ->name('admin');
 
 Auth::routes();
 

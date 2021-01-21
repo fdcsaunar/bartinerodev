@@ -13,7 +13,7 @@
                 <h1>What do you have to barter?</h1>
 
                 <div class="location">
-                    <p><i class="fas fa-location-arrow"></i>You are posting from barangay.</p>
+                    <p><i class="fas fa-location-arrow"></i>You are posting from {{ auth()->user()->barangay }}</p>
                 </div>
 
                 <form action="{{ route('items.store') }}" method="post" enctype="multipart/form-data">

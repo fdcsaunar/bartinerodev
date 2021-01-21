@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="card-body">
-                    <p>{{ $post->user->name }} • {{ $post->category }} • {{ $post->created_at->diffForHumans() }}</p>
+                    <p>{{ $post->user->username }} • {{ $post->category }} • {{ $post->created_at->diffForHumans() }}</p>
                     <h5 class="card-title">
                         <a href="/items/{{$post->id}}">{{ $post->title }}</a>
                     </h5>

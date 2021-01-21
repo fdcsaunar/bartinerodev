@@ -84,6 +84,26 @@
 
                                 <a class="dropdown-item" href="/categories">All Categories</a>
 
+                                <a class="dropdown-item" href="/category/food">Food</a>
+
+                                <a class="dropdown-item" href="/category/electronics">Electronics</a>
+
+                                <a class="dropdown-item" href="/category/gardening">Gardening</a>
+
+                                <a class="dropdown-item" href="/category/clothing">Clothing</a>
+
+                                <a class="dropdown-item" href="/category/services">Services</a>
+
+                                <a class="dropdown-item" href="/category/automotives">Automotives</a> 
+
+                                <a class="dropdown-item" href="/category/wellness">Beauty & Wellness</a>
+
+                                <a class="dropdown-item" href="/category/furniture">>Furniture</a>
+
+                                <a class="dropdown-item" href="/category/others">Others</a>
+
+                                {{-- <a class="dropdown-item" href="/categories">All Categories</a>
+
                                 <a class="dropdown-item" href="/category/food"><i class="fas fa-utensils"></i>Food</a>
 
                                 <a class="dropdown-item" href="/category/electronics"><i class="fas fa-mobile"></i>Electronics</a>
@@ -94,13 +114,13 @@
 
                                 <a class="dropdown-item" href="/category/services"><i class="fas fa-tools"></i>Services</a>
 
-                                <a class="dropdown-item" href="/category/automotives"><i class="fas fa-car"></i>Automotives</a>
+                                <a class="dropdown-item" href="/category/automotives"><i class="fas fa-car"></i>Automotives</a> 
 
                                 <a class="dropdown-item" href="/category/wellness"><i class="fas fa-heart"></i>Wellness</a>
 
                                 <a class="dropdown-item" href="/category/furniture"><i class="fas fa-couch"></i>Furniture</a>
 
-                                <a class="dropdown-item" href="/category/others"><i class="fas fa-shapes"></i>Others</a>
+                                <a class="dropdown-item" href="/category/others"><i class="fas fa-shapes"></i>Others</a> --}}
 
                             </div>
                         </li>

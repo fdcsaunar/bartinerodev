@@ -1,0 +1,47 @@
+#admin {
+
+    padding: 2rem 0;
+    font-family: 'DM Sans', sans-serif;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 2rem;
+    }
+
+    h5 {
+        font-size: 1.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        color: #b8b8b8;
+        padding-bottom: 0.5rem;
+    }
+
+    .listings {
+        border-bottom: 1px solid #e8e8e8;
+        padding: 1rem 0;
+    }
+
+    .fa, .fas {
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-right: 0.75rem;
+    }
+
+    button[type=submit] {
+        color: #b8b8b8;
+        font-size: 1rem;
+        padding: 0.5rem;
+        border: 1px solid #b8b8b8;
+    }
+
+    button[type=submit]:hover {
+        color: black;
+        transition: 0.3s;
+        border: 1px solid black;
+    }
+
+}

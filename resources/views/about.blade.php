@@ -9,7 +9,7 @@
             <div class="col-lg-4">
 
                 <h1>For Las Piñeros by Las Piñeros.</h1>
-                <p>Bartinero aims to provide a hassle-free barter experience for the Las Pinas community. This is the website unifies bartering communities on social media. No need to look for the right group to join in to. This is the place to be.</p>
+                <p>Bartinero aims to provide a hassle-free barter experience for the Las Pinas community. This is the website that will unify bartering communities on social media. No need to look for the right group to join in to. This is the place to be.</p>
 
                 <div class="hero-cta">
                     <a href="/about#questions" class="cta-regular">How do I barter?</a>
