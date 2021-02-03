@@ -1,0 +1,139 @@
+#single-category {
+
+    padding: 2rem 0;
+    font-family: 'DM Sans', sans-serif;
+
+    .single-category-hero {
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: black;
+            padding-top: 1.5rem;
+            text-transform: capitalize;
+            letter-spacing: -0.1rem;
+        }
+    
+        .hero-slider {
+            padding-top: 1.5rem;
+            padding-bottom: 2rem;
+        }
+    
+        .breadcrumbs-nav {
+    
+            a {
+                color: #b8b8b8;
+                font-size: 0.8rem;
+                font-weight: 500;
+            }
+            
+            .fa, .fas {
+                font-weight: 600;
+                font-size: 0.8rem;
+                margin-right: 0.75rem;
+            }
+        
+            a:hover {
+                color: black;
+                transition: 0.3s;
+                text-decoration: none;
+            }
+    
+        }
+
+    }
+
+    .latest-deals {
+
+        padding: 2rem 0;
+
+        .col-lg-3, .col-md-4 {
+
+            padding-bottom: 2rem;
+
+            .card {
+
+                border: 1px solid black;
+
+                .card-top {
+
+                    p {
+                        font-size: 0.8rem;
+                        position: absolute;
+                        padding: 0.5rem 0.8rem;
+                        background-color: black;
+                        margin: 1.25rem;
+                        color: white;
+                        border-radius: 4px;
+                    }
+
+                    .fa, .far {
+                        margin-right: 0.4rem;
+                        font-size: 0.75rem;
+                    }
+
+                }
+
+                .card-body {
+
+                    .card-title {
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        letter-spacing: -0.02rem;
+                        margin-top: 0.5rem;
+                        margin-bottom: 0;
+                    }
+
+                    hr {
+                        margin: 1rem 0;
+                    }
+
+                    .card-subtitle {
+                        font-size: 0.9rem;
+                        padding-top: 0.5rem;
+                        color: #b8b8b8;
+                        font-size: 0.8rem;
+                        font-weight: 500;
+                    }
+                    
+                    .fa, .fas {
+                        font-weight: 600;
+                        font-size: 0.7rem;
+                        margin-right: 0.45rem;
+                    }
+
+                    .cb-footer {
+
+                        p {
+                            font-size: 0.65rem;
+                            letter-spacing: 0.1rem;
+                        }
+
+
+                        a {
+                            color: black;
+                            font-size: 0.9rem;
+                            font-weight: 700;
+                        }
+                        .fa, .far {
+                            font-size: 0.75rem;
+                            padding: 0.5rem;
+                            border: 1px solid black;
+                            border-radius: 4px;
+                        }
+                    }
+
+
+                }
+
+            }
+
+
+
+        }
+
+    }
+
+    
+
+}

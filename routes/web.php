@@ -43,6 +43,7 @@ Route::get('/categories', function () {
 
 Route::get('/category/{cat}', function ($cat = null) {
     if ($cat) {
+        $header = $cat;
         $banner = $cat . '.jpg';
         $posts = Post::orderBy('created_at', 'desc')->where('category', '=', $cat)->get();
     } else {
@@ -50,6 +51,7 @@ Route::get('/category/{cat}', function ($cat = null) {
         $posts = Post::orderBy('created_at', 'desc')->get();
     }
     return view('category', [
+        'header' => $header,
         'banner' => $banner,
         'posts' => $posts
     ]);
